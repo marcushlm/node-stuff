@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+    h1.
+        Infophoto #{person._id}
+    p Name: #{person.name}
+    p age: #{person.age}
+    p DOB: #{personDob}
+    if person.isloved
+      p Loved
+    else
+      p Not loved
+    p
+      a(href='/people/') List All

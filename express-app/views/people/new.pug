@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+	h1.
+		#{title}
+	form#formAddPerson(name="add-person",method="post",action="/people")
+		p Name:
+			input#inputName(type="text", placeholder="ex. John Smith", name="name")
+		p age:
+			input#inputAge(type="number", placeholder="ex. 26", name="age")
+		p DOB:
+			input#inputDob(type="date", name="dob")
+		p Are You Loved?
+			input#inputIsLoved(type="checkbox", name="isloved")
+		p
+			button#btnSubmit(type="submit") submit

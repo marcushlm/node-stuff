@@ -1,0 +1,25 @@
+extends ../layout
+
+block content
+  h1.
+    #{title}
+  ul
+    each person, i in people
+      li
+        = person.name + ", " + person.age
+        br
+        = "Born on " + person.dob
+        br
+        if person.isloved
+          p Loved
+        else
+          p Not loved
+        p
+            a(href='/people/'+ person._id) Show
+        p
+            a(href='/people/'+ person._id + '/edit') Edit        
+        p
+        form(action='/people/'+ person._id + '/edit',method='post',enctype='application/x-www-form-urlencoded')
+            input(type='hidden',value='DELETE',name='_method')
+            button(type='submit').
+                Delete
